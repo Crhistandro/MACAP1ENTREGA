@@ -1,0 +1,296 @@
+/* cuando vemos e asterisco es un seector genra para todo el codigo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*  esta es una etiqueta de borde */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    display: flex;    /* esto es para que no tenga una barra de scroll y se pase */
+    min-height: 100vh;
+}
+
+.todo {
+    background: #2c3e50;
+    /*color de fondo*/
+    width: 260px;
+    /*E ancho de la clase que contiene esa informacion*/
+    transition: width 0.3s;
+    /*secuencia de cambio cuando se le da click a un enace o algo asi*/
+    position: relative;
+    /*para los objetos define una pocicion ya esta documentada en team*/
+}
+
+.todo.collapsed {
+    width: 50px;
+}
+
+/*pocicion color tamño y todas as modificaciones a menu amburgues*/
+.boton-ambur {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background: #34495e;
+    border: none;
+    color: white;
+    font-size: medium;
+    padding: 10px;
+    /*tamaño de la caja donde esta e icono*/
+    cursor: pointer;
+    /*efecto de manita cuando me pociciono en el icono*/
+    border-radius: 4px;
+}
+
+.todo.collapsed .boton-ambur {
+    right: -40px; /*que se pase la barra de menu -40 que no se cierre del todo */
+    background: #2c3e50; 
+}
+
+.menu {
+    padding: 50px 0; /*bajo el contenido del texto de la barra de menu*/
+    height: 100%;
+    overflow-y: auto;  /*se agrega cuanto texto se alargue y pone o quita e scroll muestra el texto een ete caso del menu*/
+
+}
+
+.menu-items {
+    padding: 12px 20px;  /*me da margenes de distancias tomando en cuenta e eje X y eje Y*/
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.menu-items:hover {
+    background: black;
+}
+
+/*se llama a diseño de los iconos que se lamaron de la API de la pagina*/
+.menu-items i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.todo.collapsed .menu-items span,
+.todo.collapsed .submenu {
+    display: none;
+    /*esto es lo que esconde e display*/
+}
+
+/*escondio el sub menu*/
+.submenu {
+   margin-left: 45px;
+   display: none; 
+}
+
+/*para que el contenido de sub menu este en bloques*/
+.submenu.active {
+    display: block;
+}
+
+.submenu-items {
+    padding: 10px;
+    color: #bdc3c7;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submenu-items:hover {
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #ecf0f1;
+    font-family: unset;
+    
+}
+
+.content-section {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;   
+   
+}
+
+.content .content-section ul{
+    text-align: justify; 
+    
+}
+
+.content-section.active {
+    display: block;
+}
+
+/*Diseño de las flechitas*/
+.arrow {
+    margin-left: auto; 
+    transition: transform 0.3s; /*transfor se utiiza para que la flecha del icono cambie de pocicion de arriba hacia abajo*/
+}
+
+.menu-items.active .arrow {
+    transform: rotate(180deg);
+}
+
+img{
+    border-radius: 8px;
+}
+
+.boton-casa {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background: #34495e;
+    border: none;
+    color: white;
+    font-size: medium;
+    padding: 10px;
+    /*tamaño de la caja donde esta e icono*/
+    cursor: pointer;
+    /*efecto de manita cuando me pociciono en el icono*/
+    border-radius: 4px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////*/
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+tr:hover{
+    background-color: gray;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #333;
+  color: white;
+}
+
+.contenedor .distabla{
+
+    width: 90%;
+    padding: auto;
+}
+.contenedor .distabla .img{
+    width: 90%;
+    padding: auto;
+}
+
+/* darle estilo al contenido de cada objeto */
+.inicio .grab-container {
+   
+    display: grid;
+    background-color: #060606;
+    padding: 5px;
+    gap: 5px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+.inicio .dis-inicio {
+    background-color: white;
+    padding: 10px;
+    flex: 1;
+    /* font-family: Copperplate Gothic; */
+
+
+}
+
+.inicio .grab-container .dis-inicio h2{
+    font-family: Bernard MT;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.distabla .criterios li{
+    margin-left: 12px;
+}
+
+/* Estios para los enlaces del menu */
+.menulat ul li {
+    width: 100%;
+}
+
+.menulat ul li a {
+    display: block;
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 8px 52px rgb(20, 20, 20);
+    margin: 10px 0;
+}
+
+/* Efecto hover para los enaces */
+.menulat ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* * Iconos opcionales */
+.menulat ul li a .icon {
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.menulat h2{
+    text-align: center
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* estilo pagina mennu principal */
+.contenedor {
+    margin-left: 400px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #0ad2f500;
+    height: 100vh;
+    color: rgb(12, 12, 12);
+
+}
+
+.contenedor h1 {
+    text-align: center;
+    font-size: xxx-large;
+}
+
+/* estilo pagina inicio*/
+.inicio {
+      
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #0ad2f500;
+    height: 100vh;
+    color: rgb(12, 12, 12);
+
+}
+
+.inicio h1 {
+    text-align: center;
+    font-size: xxx-large;
+}
